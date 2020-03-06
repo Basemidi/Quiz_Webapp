@@ -1,4 +1,17 @@
+@font-face{
+    font-family: "roboto";
+    src: url(./fonts/Roboto-Black.ttf);
+}
+@font-face{
+    font-family: "textile";
+    src: url(./fonts/Textile.ttf);
+}
+
+
+
+
 body{
+    font-family: "roboto";
     margin:0;
     background: url("./images/Tafel.png");
     background-size: cover;
@@ -100,6 +113,7 @@ body{
 
 }
 .kate{
+    font-family: "textile";
     margin-bottom: 140px;
     width: 267px;
 }
@@ -107,6 +121,7 @@ body{
     width: 79%;
 }
 .score{
+    font-family: "textile";
     position: absolute;
     top: 122px;
     right: 231px;
@@ -130,11 +145,14 @@ body{
 
 }
 .antwortKarten{
+    font-family: "textile";
     height: 295px;
     width: 30%;
     background-color: #ffffff;
+    transform: all 1s ease;
 }
 .answerbutton{
+    cursor: pointer;
     background-color: #ffffff59;
     position: absolute;
     top: 395px;
@@ -142,6 +160,7 @@ body{
     font-size: 30px;
 }
 .leavebutton{
+    cursor: pointer;
     display: none;
     background-color: #ffffff59;
     position: absolute;

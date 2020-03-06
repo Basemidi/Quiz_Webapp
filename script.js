@@ -43,8 +43,24 @@ function moveToCenter(){
     var ov = document.getElementsByClassName('question');
     
     var q = quest.getQuestion('category1');
+    richtig = q[4];
+
+    var questcart = document.getElementsByClassName('quest');
+    var answ1 = document.getElementsByClassName('erst');
+    var answ2 = document.getElementsByClassName('zwei');
+    var answ3 = document.getElementsByClassName('drei');
+    var categoryname = document.getElementsByClassName('kate');
+    var scorediv = document.getElementsByClassName('score');
+ 
+
+    categoryname[0].innerHTML = tar.innerHTML;
+    questcart[0].innerHTML = q[0];
+    answ1[0].innerHTML = q[1];
+    answ2[0].innerHTML = q[2];
+    answ3[0].innerHTML = q[3];
+    scorediv[0].innerHTML = q[5];
+
     tar.firstChild.data = '';
-    
     tar.classList.add("anim1");
     
     setTimeout(function(){ tar.classList.add("anim2");}, 500);
@@ -55,18 +71,32 @@ function moveToCenter(){
 }
 
 function showAnswer(){
-    var answerbutton = getElementsByClassName("answerbutton");
-    var backbutton = getElementsByClassName("leavebutton");
-    answerbutton.style.display = "none";
-    backbutton.style.display = "inherit";
+
+    var answerbutton = document.getElementsByClassName("answerbutton");
+    var backbutton = document.getElementsByClassName("leavebutton");
 
     
+    answerbutton[0].style.display = "none";
+    backbutton[0].style.display = "inherit";
 
+    if(richtig == 1){
+        var karte = document.getElementsByClassName('erst');
+        karte[0].style.border = 'solid 2px red';
+        karte[0].style.boxShadow = '0px 15px 5px -7px rgba(0,0,0,0.75);';
+    }else if(richtig == 2){
+        var karte = document.getElementsByClassName('zwei');
+        karte[0].style.border = 'solid 2px red';
+        karte[0].style.boxShadow = '0px 15px 5px -7px rgba(0,0,0,0.75);';
+    }else if(richtig == 3){
+        var karte = document.getElementsByClassName('drei');
+        karte[0].style.border = 'solid 2px red';
+        karte[0].style.boxShadow = '0px 15px 5px -7px rgba(0,0,0,0.75);';
+    }
 
 }
 
 
 var quest = new questions();
-
+var richtig;
 
 
