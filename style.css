@@ -134,3 +134,18 @@ body{
     width: 30%;
     background-color: #ffffff;
 }
+.answerbutton{
+    background-color: #ffffff59;
+    position: absolute;
+    top: 395px;
+    right: 288px;
+    font-size: 30px;
+}
+.leavebutton{
+    display: none;
+    background-color: #ffffff59;
+    position: absolute;
+    top: 395px;
+    right: 288px;
+    font-size: 30px;
+}

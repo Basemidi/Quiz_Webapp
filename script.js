@@ -54,6 +54,17 @@ function moveToCenter(){
     
 }
 
+function showAnswer(){
+    var answerbutton = getElementsByClassName("answerbutton");
+    var backbutton = getElementsByClassName("leavebutton");
+    answerbutton.style.display = "none";
+    backbutton.style.display = "inherit";
+
+    
+
+
+}
+
 
 var quest = new questions();
 
