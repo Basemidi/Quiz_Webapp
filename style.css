@@ -94,7 +94,7 @@ body{
     opacity: 0;
     width: 1044px;
     height: 611px;
-    z-index: 4;
+    z-index: -1;
     font-size: 42px;
     transition: all 1.5s ease;
 
@@ -115,4 +115,22 @@ body{
     position: absolute;
     top: 256px;
     right: 288px;
+}
+.antworten{
+    width: 1125px;
+    height: 296px;
+    position: absolute;
+    top: 460px;
+    right: 201px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+
+}
+.antwortKarten{
+    height: 295px;
+    width: 30%;
+    background-color: #ffffff;
 }

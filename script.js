@@ -41,7 +41,7 @@ function moveToCenter(){
 
     var tar = event.target;
     var ov = document.getElementsByClassName('question');
-
+    
     var q = quest.getQuestion('category1');
     tar.firstChild.data = '';
     
@@ -50,6 +50,7 @@ function moveToCenter(){
     setTimeout(function(){ tar.classList.add("anim2");}, 500);
     setTimeout(function(){ tar.classList.add("anim3");}, 1000);
     setTimeout(function(){ ov[0].style.opacity = 1;}, 1200);
+    ov[0].style.zIndex = "4";
     
 }
 
