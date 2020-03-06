@@ -11,7 +11,7 @@
   <body>
     <div class="center">
         <div id="cat1" class="card" onclick="moveToCenter()">Kategorie1</div>
-        <div id="cat2" class=" card">Kategorie2</div>
+        <div id="cat2" class="card">Kategorie2</div>
         <div id="cat3" class="card">Kategorie3</div>
         <div id="cat4" class="card">Kategorie4</div>
         <div id="cat5" class="card">Kategorie5</div>
@@ -23,11 +23,20 @@
           <div class="timer">Timer</div>
           <div class="quest">Die Frage die gestellt wird</div>
           <div class="answerbutton" onclick="showAnswer()">Antwort</div>
-          <div class="leavebutton">Zurück</div>
+          <div class="leavebutton" onclick="backToOverview()">Zurück</div>
           <div class="antworten">
-            <div class="antwortKarten erst"></div>
-            <div class="antwortKarten zwei"></div>
-            <div class="antwortKarten drei"></div>
+            <div class="antwortKarten erst">
+              <div class="zahl">1</div>
+              <div class="ant1"></div>
+            </div>
+            <div class="antwortKarten zwei">
+              <div class="zahl">2</div>
+              <div class="ant2"></div>
+            </div>
+            <div class="antwortKarten drei">
+              <div class="zahl">3</div>
+              <div class="ant3"></div>
+            </div>
           </div>
         </div>
     </div>

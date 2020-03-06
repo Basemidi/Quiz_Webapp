@@ -46,9 +46,9 @@ function moveToCenter(){
     richtig = q[4];
 
     var questcart = document.getElementsByClassName('quest');
-    var answ1 = document.getElementsByClassName('erst');
-    var answ2 = document.getElementsByClassName('zwei');
-    var answ3 = document.getElementsByClassName('drei');
+    var answ1 = document.getElementsByClassName('ant1');
+    var answ2 = document.getElementsByClassName('ant2');
+    var answ3 = document.getElementsByClassName('ant3');
     var categoryname = document.getElementsByClassName('kate');
     var scorediv = document.getElementsByClassName('score');
  
@@ -94,9 +94,24 @@ function showAnswer(){
     }
 
 }
+function backToOverview(){
+
+    var ele = document.getElementsByClassName("anim2");
+    var ov = document.getElementsByClassName('question');
+    var categoryname = document.getElementsByClassName('kate');
+    console.log(ele[0].classList);
+
+    ov[0].style.opacity = 0;
+    setTimeout(function(){ ele[0].classList.remove(ele[0].classList[3]);}, 500);
+    setTimeout(function(){ ele[0].classList.remove(ele[0].classList[2]);}, 1000);
+    setTimeout(function(){ele[0].classList.remove(ele[0].classList[1]);}, 1200);
+
+    ele[0].firstChild = categoryname[0].innerHTML;
+}
 
 
 var quest = new questions();
 var richtig;
+
 
 
