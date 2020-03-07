@@ -173,3 +173,7 @@ body{
     text-align: center;
     margin-bottom: 25px;
 }
+.richtig{
+   box-shadow:0px 15px 5px -7px rgba(0,0,0,0.75);
+   border: solid 2px red;
+}

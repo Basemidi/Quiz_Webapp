@@ -61,6 +61,7 @@ function moveToCenter(){
     scorediv[0].innerHTML = q[5];
 
     tar.firstChild.data = '';
+    tar.classList.add("active");
     tar.classList.add("anim1");
     
     setTimeout(function(){ tar.classList.add("anim2");}, 500);
@@ -81,32 +82,47 @@ function showAnswer(){
 
     if(richtig == 1){
         var karte = document.getElementsByClassName('erst');
-        karte[0].style.border = 'solid 2px red';
-        karte[0].style.boxShadow = '0px 15px 5px -7px rgba(0,0,0,0.75);';
+        karte[0].classList.add("richtig");
+
     }else if(richtig == 2){
         var karte = document.getElementsByClassName('zwei');
-        karte[0].style.border = 'solid 2px red';
-        karte[0].style.boxShadow = '0px 15px 5px -7px rgba(0,0,0,0.75);';
+        karte[0].classList.add("richtig");
+
     }else if(richtig == 3){
         var karte = document.getElementsByClassName('drei');
-        karte[0].style.border = 'solid 2px red';
-        karte[0].style.boxShadow = '0px 15px 5px -7px rgba(0,0,0,0.75);';
+        karte[0].classList.add("richtig");
     }
 
 }
 function backToOverview(){
 
-    var ele = document.getElementsByClassName("anim2");
+    var ele = document.getElementsByClassName("active");
     var ov = document.getElementsByClassName('question');
     var categoryname = document.getElementsByClassName('kate');
+    var rich = document.getElementsByClassName("richtig");
+    var answerbutton = document.getElementsByClassName("answerbutton");
+    var backbutton = document.getElementsByClassName("leavebutton");
+
+    
     console.log(ele[0].classList);
 
     ov[0].style.opacity = 0;
-    setTimeout(function(){ ele[0].classList.remove(ele[0].classList[3]);}, 500);
-    setTimeout(function(){ ele[0].classList.remove(ele[0].classList[2]);}, 1000);
-    setTimeout(function(){ele[0].classList.remove(ele[0].classList[1]);}, 1200);
 
-    ele[0].firstChild = categoryname[0].innerHTML;
+    setTimeout(function(){ ele[0].classList.remove(ele[0].classList[4]);}, 500);
+    setTimeout(function(){ ele[0].classList.remove(ele[0].classList[3]);}, 1000);
+    setTimeout(function(){ele[0].classList.remove(ele[0].classList[2]);}, 1200);
+    
+    setTimeout(function(){ele[0].innerHTML = categoryname[0].innerHTML;}, 1500);
+    
+
+    setTimeout(function(){ele[0].classList.remove(ele[0].classList[1]);}, 1600);
+
+    setTimeout(function(){rich[0].classList.remove("richtig");}, 1600);
+    setTimeout(function(){answerbutton[0].style.display = "inherit";}, 1600);
+    setTimeout(function(){backbutton[0].style.display = "none";}, 1600);
+    ov[0].style.zIndex = -1;
+
+
 }
 
 
