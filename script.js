@@ -1,36 +1,54 @@
 
 class questions{
     constructor(){
+        //Allgemeinwissen
         this.category1 = [['Frage1', 'Antwort1', 'Antwort2', 'Antwort3', 3, 50],
                             ['Frage2', 'Antwort1', 'Antwort2', 'Antwort3', 3, 50]];
+        //Wissenschaft & Technik
         this.category2 = [['Frage1', 'Antwort1', 'Antwort2', 'Antwort3', 3, 50],
                             ['Frage2', 'Antwort1', 'Antwort2', 'Antwort3', 3, 50]];
+        //Geschichte
         this.category3 = [['Frage1', 'Antwort1', 'Antwort2', 'Antwort3', 3, 50],
-                            ['Frage2', 'Antwort1', 'Antwort2', 'Antwort3', 3, 50]];                          
+                            ['Frage2', 'Antwort1', 'Antwort2', 'Antwort3', 3, 50]];
+        //Sport
+        this.category4 = [['Frage1', 'Antwort1', 'Antwort2', 'Antwort3', 3, 50],
+                            ['Frage2', 'Antwort1', 'Antwort2', 'Antwort3', 3, 50]];
+        //Serien & Filme
+        this.category5 = [['Frage1', 'Antwort1', 'Antwort2', 'Antwort3', 3, 50],
+                            ['Frage2', 'Antwort1', 'Antwort2', 'Antwort3', 3, 50]];
+        //Musik
+        this.category6 = [['Frage1', 'Antwort1', 'Antwort2', 'Antwort3', 3, 50],
+                            ['Frage2', 'Antwort1', 'Antwort2', 'Antwort3', 3, 50]];
+        //Schnooke
+        this.category7 = [['Frage1', 'Antwort1', 'Antwort2', 'Antwort3', 3, 50],
+                            ['Frage2', 'Antwort1', 'Antwort2', 'Antwort3', 3, 50]];                        
     }
 
     getQuestion(cate){
 
-        if(cate == 'category1'){
-            var min = 0;
-            var max = this.category1.length - 1;
-            let random = Math.floor(Math.random()*(max-min+1)+min);
+        if(cate == 'Allgemeinwissen'){
+            return this.category1.pop();
 
-            return this.category1[random];
-        }else if(cate == 'category2'){
-            var min = 0;
-            var max = this.category2.length - 1;
-            let random = Math.floor(Math.random()*(max-min+1)+min);
+        }else if(cate == 'Wissenschaft &amp; Technik'){
+            return this.category2.pop();
+
+        }else if(cate == 'Geschichte'){
+            return this.category3.pop();
+
+        }else if(cate == 'Sport'){
+            return this.category4.pop();
+
+        }else if(cate == 'Serien &amp; Filme'){
+            return this.category5.pop();
+
+        }else if(cate == 'Musik'){
+            return this.category6.pop();
+
+        }else if(cate == 'Schnooke'){
+            return this.category7.pop();
             
-            return this.category2[random];
-        }else if(cate == 'category3'){
-            var min = 0;
-            var max = this.category3.length - 1;
-            let random = Math.floor(Math.random()*(max-min+1)+min);
-            
-            return this.category3[random];
         }else{
-            return 'Wrong';
+            return "wrong";
         }
     }
 }
@@ -40,18 +58,23 @@ class questions{
 function moveToCenter(){
 
     var tar = event.target;
+    var cate = tar.innerHTML;
     var ov = document.getElementsByClassName('question');
     
-    var q = quest.getQuestion('category1');
+    var q = quest.getQuestion(tar.innerHTML);
     richtig = q[4];
-
+ 
     var questcart = document.getElementsByClassName('quest');
     var answ1 = document.getElementsByClassName('ant1');
     var answ2 = document.getElementsByClassName('ant2');
     var answ3 = document.getElementsByClassName('ant3');
     var categoryname = document.getElementsByClassName('kate');
     var scorediv = document.getElementsByClassName('score');
- 
+    var whichclass = 'anim1';
+
+    if (cate == 'Geschichte' || cate == 'Sport' || cate == 'Schnooke'){
+        whichclass = 'animleft';
+    }
 
     categoryname[0].innerHTML = tar.innerHTML;
     questcart[0].innerHTML = q[0];
@@ -60,9 +83,11 @@ function moveToCenter(){
     answ3[0].innerHTML = q[3];
     scorediv[0].innerHTML = q[5];
 
+
+
     tar.firstChild.data = '';
     tar.classList.add("active");
-    tar.classList.add("anim1");
+    tar.classList.add(whichclass);
     
     setTimeout(function(){ tar.classList.add("anim2");}, 500);
     setTimeout(function(){ tar.classList.add("anim3");}, 1000);
