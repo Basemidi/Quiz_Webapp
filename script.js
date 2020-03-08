@@ -46,7 +46,7 @@ class questions{
 
         }else if(cate == 'Schnooke'){
             return this.category7.pop();
-            
+
         }else{
             return "wrong";
         }
@@ -148,6 +148,26 @@ function backToOverview(){
     ov[0].style.zIndex = -1;
 
 
+}
+
+function startTimer(){
+    var futuredate = new Date(new Date().getTime() + 60000);// One minute
+
+    var x = setInterval(function() {
+
+        var now = new Date().getTime();
+      
+        var distance = futuredate - now;
+
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+        document.getElementsByClassName("timer")[0].innerHTML = seconds;
+
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementsByClassName("timer")[0].innerHTML = "Timer";
+        }
+      }, 1000);
 }
 
 

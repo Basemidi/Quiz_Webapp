@@ -139,6 +139,7 @@ body{
     left: 785px;
 }
 .timer{
+    cursor: pointer;
     position: absolute;
     top: 129px;
     right: 476px;
